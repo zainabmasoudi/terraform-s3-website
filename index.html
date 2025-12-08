@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zainab Masoudi Portfolio</title>
+<style>
+  /* Global Styles */
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+  body { background:#f5f7fa; color:#333; line-height:1.6; scroll-behavior: smooth; }
+  a { text-decoration:none; color:inherit; }
+  h1,h2,h3 { margin-bottom:15px; }
+  section { padding:80px 20px; max-width:1000px; margin:0 auto; }
+  section h2 { text-align:center; margin-bottom:40px; color:#6C63FF; position:relative; }
+  section h2::after { content:''; display:block; width:60px; height:3px; background:#6C63FF; margin:10px auto 0; border-radius:2px; }
+
+  /* Header & Nav */
+  header { background:#6C63FF; color:white; padding:40px 20px; text-align:center; position:sticky; top:0; z-index:1000; }
+  header h1 { font-size:2.5rem; margin-bottom:10px; }
+  header p { font-size:1.2rem; }
+  nav { margin-top:20px; }
+  nav a { margin:0 15px; color:white; font-weight:bold; transition: color 0.3s; }
+  nav a:hover { color:#FFD700; }
+
+  /* Cards */
+  .card { background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); margin-bottom:30px; transform:translateY(50px); opacity:0; animation:fadeInUp 0.8s forwards; }
+  .skills span { display:inline-block; background:#6C63FF; color:white; padding:5px 10px; margin:5px; border-radius:5px; font-size:0.9rem; transition: transform 0.3s; }
+  .skills span:hover { transform:scale(1.1); }
+
+  /* Experience */
+  .experience { display:grid; grid-template-columns:1fr; gap:20px; }
+  .exp-card { background:white; padding:20px; border-left:5px solid #6C63FF; border-radius:8px; box-shadow:0 5px 10px rgba(0,0,0,0.05); transform:scale(0.8); opacity:0; animation:popIn 0.8s forwards; transition: transform 0.3s, box-shadow 0.3s; }
+  .exp-card:hover { transform:scale(1); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+
+  /* Projects */
+  .projects { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; }
+  .project-card { background:white; padding:20px; border-radius:10px; box-shadow:0 5px 15px rgba(0,0,0,0.1); transform:translateY(50px); opacity:0; animation:fadeInUp 0.8s forwards; transition: transform 0.3s, box-shadow 0.3s; }
+  .project-card:hover { transform:translateY(-5px); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+
+  /* Reviews */
+  .reviews { display:flex; flex-direction:column; gap:20px; align-items:center; }
+  .review-card { background:white; padding:20px; border-left:5px solid #6C63FF; border-radius:8px; box-shadow:0 5px 10px rgba(0,0,0,0.05); max-width:700px; transform:scale(0.8); opacity:0; animation:popIn 0.8s forwards; transition: transform 0.3s, box-shadow 0.3s; }
+  .review-card:hover { transform:scale(1.05); box-shadow:0 10px 20px rgba(0,0,0,0.15); }
+  .review-card p { font-style:italic; margin-bottom:10px; }
+  .review-card span { font-weight:bold; color:#6C63FF; }
+
+  /* Footer */
+  footer { text-align:center; padding:30px 20px; background:#6C63FF; color:white; margin-top:60px; }
+
+  /* Animations */
+  @keyframes fadeInDown { 0%{opacity:0;transform:translateY(-50px);} 100%{opacity:1;transform:translateY(0);} }
+  @keyframes fadeInUp { 0%{opacity:0;transform:translateY(50px);} 100%{opacity:1;transform:translateY(0);} }
+  @keyframes popIn { 0%{opacity:0;transform:scale(0.8);} 100%{opacity:1;transform:scale(1);} }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Zainab Masoudi</h1>
+  <p>Cloud Computing Specialist | Kubernetes & CI/CD Enthusiast | IT Professional</p>
+  <nav>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#reviews">Reviews</a>
+  </nav>
+</header>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="card">
+    <h3>Master’s Degree in Cloud Computing</h3>
+    <p>Atlantic Technological University (ATU)</p>
+    <p><strong>Dissertation:</strong> RBAC Drift Detection Using GitOps Argo CD Automation Tool in Cloud-Native Environment.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="card skills">
+    <span>Kubernetes</span>
+    <span>Argo CD</span>
+    <span>CI/CD Pipelines</span>
+    <span>Terraform</span>
+    <span>Cloud Architecture</span>
+    <span>Network Automation</span>
+    <span>Ansible</span>
+    <span>Python & Netmiko</span>
+    <span>PowerShell</span>
+    <span>Linux & Windows Server Management</span>
+    <span>Firewall & Security</span>
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience">
+    <div class="exp-card">
+      <h3>Student Internship – Atlantic Technological University</h3>
+      <p>Jan 2025 – May 2025 (5 months)</p>
+      <ul>
+        <li>Automated Dell OS9/OS10 switch configurations using Ansible.</li>
+        <li>Developed Python scripts using Netmiko for Fortinet firewall log management.</li>
+        <li>Monitored Active Directory logins/resources with PowerShell.</li>
+        <li>Set up Jira Data Center for agile project management.</li>
+        <li>Configured NUT Server/Client for UPS/PDU monitoring.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>Senior IT Officer – AHSP</h3>
+      <p>Jun 2019 – Apr 2022</p>
+      <ul>
+        <li>Configured/managing firewall rules (DNS, DHCP, IDS/IPS, OpenVAS & IPsec).</li>
+        <li>Administered NAS systems (RAID5, iSCSI) and domain users/groups.</li>
+        <li>Installed Xen servers, backups, RAID & LVM setups.</li>
+        <li>Configured Linux & Windows servers, GPOs, RSAT, MariaDB, LDAP replication.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>IT Specialist – GIZ GmbH</h3>
+      <p>Jan 2019 – Jun 2019</p>
+      <ul>
+        <li>Assisted XenServer virtualization and network resource management.</li>
+        <li>Performed penetration testing using OpenVAS.</li>
+        <li>Monitored network performance with Icinga & Nagios.</li>
+        <li>Implemented Groupware solutions (Horde, Kopano).</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>IT Engineer – Afghanistan Development Registry</h3>
+      <p>Feb 2017 – Jan 2018</p>
+      <ul>
+        <li>Managed network cabling, TP-Link devices, VLANs, ACLs, NAT, and routing.</li>
+        <li>Set up user workstations and documented troubleshooting procedures.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <h3>IT Technician – Ministry of Higher Education of Afghanistan</h3>
+      <p>Apr 2016 – Dec 2016</p>
+      <ul>
+        <li>Implemented RADIUS authentication protocols for secure network access.</li>
+        <li>Participated in AfgREN community cloud project for educational institutions.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>RBAC Drift Detection Tool</h3>
+      <p>Automated detection of RBAC policy drifts in Kubernetes using Argo CD, improving cloud-native security compliance.</p>
+    </div>
+    <div class="project-card">
+      <h3>Network Automation Scripts</h3>
+      <p>Developed Python & Ansible scripts for switch and firewall management during internship at KMN Data Center.</p>
+    </div>
+    <div class="project-card">
+      <h3>Terraform Infrastructure Lab</h3>
+      <p>Designed and deployed sample cloud infrastructure using Terraform, including S3, EC2, and VPC networking for learning and exam preparation.</p>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2>Reviews</h2>
+  <div class="reviews">
+    <div class="review-card">
+      <p>"Recognized for strong practical knowledge in cloud technologies and IT infrastructure."</p>
+      <span>- Academic Evaluation</span>
+    </div>
+    <div class="review-card">
+      <p>"Praised for impactful research in RBAC drift detection and cloud-native automation."</p>
+      <span>- Research Feedback</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Zainab Masoudi. All rights reserved.
+</footer>
+
+</body>
+</html>
