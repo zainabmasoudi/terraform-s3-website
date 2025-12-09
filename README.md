@@ -13,6 +13,9 @@ It provisions an S3 bucket, configures public read access, uploads website files
 - S3 website hosting enabled (index + error pages)  
 - Automatic upload of HTML files to the bucket  
 - Fully reproducible deployment  
+- S3 bucket versioning enabled
+- Server-side encryption (AES-256)
+- Lifecycle rule to delete old object versions
 
 ---
 
@@ -47,6 +50,7 @@ It provisions an S3 bucket, configures public read access, uploads website files
 │── main.tf              # S3 bucket + ACL + hosting config
 │── provider.tf          # AWS provider & region
 │── variables.tf         # Variables (e.g., bucket name)
+|── outputs.tf – Exposes useful Terraform outputs (such as the website endpoint)
 │── index.html           # Main website page
 │── error.html           # Error page
 │── .gitignore           # Prevents committing .tfstate files (sensitive)
