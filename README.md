@@ -1,4 +1,4 @@
-# 🚀 AWS S3 Static Website Hosting with Terraform
+# AWS S3 Static Website Hosting with Terraform
 
 This project demonstrates how to deploy and host a static website on **AWS S3** using **Terraform**.  
 It provisions an S3 bucket, configures public read access, uploads website files, and enables S3 website hosting.

@@ -1,6 +1,4 @@
 # Creating S3 Bucket 
-# Terraform internal name: mybucket and aws dosen't see this name. 
-# the actual name is the bucketname
 resource "aws_s3_bucket" "main" {
     bucket = var.bucketname
 
