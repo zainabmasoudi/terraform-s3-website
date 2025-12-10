@@ -1,3 +1,3 @@
 variable "bucketname" {
-    default = "s3-backet-expriment"
+    default = "s3-bucket-expriment"
 }

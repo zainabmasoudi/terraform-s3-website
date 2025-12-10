@@ -37,6 +37,7 @@ resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.main.id
   key  = "index.html"
   source = "index.html"
+  etag   = filemd5("${path.module}/index.html")
   acl = "public-read"
   content_type = "text/html"
 
@@ -47,6 +48,7 @@ resource "aws_s3_object" "error" {
   bucket = aws_s3_bucket.main.id
   key  = "error.html"
   source = "error.html"
+  etag   = filemd5("${path.module}/error.html")
   acl = "public-read"
   content_type = "text/html"
 
@@ -74,7 +76,7 @@ resource "aws_s3_bucket_website_configuration" "portfolio_website" {
    ]
 
 }
-
+/*
 resource "aws_s3_bucket_versioning" "versioning" {
   bucket = aws_s3_bucket.main.id
 
@@ -82,6 +84,7 @@ resource "aws_s3_bucket_versioning" "versioning" {
     status = "Enabled"
   }
 }
+*/
 
 
 resource "aws_s3_bucket_server_side_encryption_configuration" "sse" {

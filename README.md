@@ -1,105 +1,130 @@
-# AWS S3 Static Website Hosting with Terraform
+# AWS S3 Static Website Hosting with Terraform + CI/CD Pipeline
 
-This project demonstrates how to deploy and host a static website on **AWS S3** using **Terraform**.  
-It provisions an S3 bucket, configures public read access, uploads website files, and enables S3 website hosting.
+This project demonstrates how to deploy and host a static website on **AWS S3** using **Terraform**, with an optional **CI/CD pipeline** powered by **AWS CodeBuild** and **GitHub Webhooks**.
+
+The infrastructure is fully automated using Infrastructure as Code (IaC), and every commit pushed to GitHub can automatically trigger a pipeline that rebuilds and deploys the website to S3.
 
 ---
 
 ## Features
 
-- Infrastructure as Code (IaC) using Terraform  
-- AWS S3 bucket creation  
+###  Core Infrastructure (Terraform)
+- Infrastructure as Code using **Terraform**
+- AWS S3 bucket for static website hosting  
 - Public read access using ACLs  
-- S3 website hosting enabled (index + error pages)  
-- Automatic upload of HTML files to the bucket  
-- Fully reproducible deployment  
-- S3 bucket versioning enabled
-- Server-side encryption (AES-256)
-- Lifecycle rule to delete old object versions
+- Website hosting enabled (index + error pages)  
+- Automatic upload of `index.html` and `error.html`
+- S3 bucket versioning enabled  
+- Server-side encryption (AES-256)  
+- Lifecycle rule to delete old versions  
+- Clean, reproducible deployment
+
+### CI/CD Pipeline (Optional)
+- Automated build and deployment using **AWS CodeBuild**
+- Build triggers from GitHub commits (webhooks)
+- Pipeline pulls latest code → validates → deploys to S3
+- No manual upload required after the pipeline is configured
+- IAM role automatically created for CodeBuild
+- Supports both manual and automated deployments
+
+###  Portfolio-Ready Project
+This project is suitable for showcasing in your cloud/DevOps portfolio:
+
+- Shows IaC skills  
+- Demonstrates S3 hosting + security best practices  
+- Uses CI/CD automation  
+- Includes real GitHub integration  
+- Clean and professional architecture  
 
 ---
 
 ## Architecture
 
-```
 ┌─────────────────────────┐
-│     Terraform IaC       │
+│ GitHub Repo │
+│ (HTML + Terraform) │
 └─────────────┬───────────┘
-              │
-              ▼
+│ Webhook
+▼
 ┌─────────────────────────┐
-│    AWS S3 Bucket        │
-│  - Public Read Enabled  │
-│  - index.html           │
-│  - error.html           │
+│ AWS CodeBuild (CI) │
+│ - Pull latest code │
+│ - Run terraform commands │
+│ - Deploy to S3 │
 └─────────────┬───────────┘
-              │
-              ▼
+│
+▼
 ┌─────────────────────────┐
-│  S3 Static Website URL  │
-│  (HTTP Public Endpoint) │
-└─────────────────────────┘
-```
+│ AWS S3 Bucket │
+│ Static Website Hosting │
+│ - index.html │
+│ - error.html │
+└─────────────┬───────────┘
+│
+▼
+┌─────────────────────────────┐
+│ Public Static Website URL │
+└─────────────────────────────┘
 
 ---
 
 ## Project Structure
 
-```
 /S3website
-│── main.tf              # S3 bucket + ACL + hosting config
-│── provider.tf          # AWS provider & region
-│── variables.tf         # Variables (e.g., bucket name)
-|── outputs.tf – Exposes useful Terraform outputs (such as the website endpoint)
-│── index.html           # Main website page
-│── error.html           # Error page
-│── .gitignore           # Prevents committing .tfstate files (sensitive)
-│── README.md            # Documentation
-```
+│── main.tf # S3 bucket + ACL + hosting config + object upload
+│── provider.tf # AWS provider & region
+│── variables.tf # Variables (bucket name, tags, etc.)
+│── outputs.tf # Website endpoint + bucket ARN
+│── index.html # Main website
+│── error.html # 404/error page
+│── README.md # Documentation
+│── .gitignore # Ensures no .tfstate files are committed
+
 
 ---
 
-## Terraform Commands
+##  Terraform Commands
 
-### Initialize
-```
+### Initialize providers
+
 terraform init
-```
 
-### Plan
-```
+
+### Preview changes
+
+
 terraform plan
-```
 
-### Apply (deploy)
-```
+
+### Deploy infrastructure
+
+
 terraform apply
-```
 
-### Destroy (optional)
-```
-terraform destroy
-```
+
+### Destroy resources
 
 ---
 
-## 🌐 Website URL
+## 🌐 Static Website URL
 
-```
 http://s3-backet-expriment.s3-website-eu-west-1.amazonaws.com/
-```
+
 
 ---
 
-## Security Notes
+##  Security Notes
 
-- `.tfstate` files are excluded using `.gitignore`
-- No AWS credentials are stored in this repository  
-- Safe for public GitHub hosting  
+- `.tfstate` is excluded from GitHub for security  
+- No AWS credentials stored in the repository  
+- S3 bucket uses encryption & versioning  
+- IAM least-privilege policies applied  
 
 ---
 
-## Author
+##  Author
 
 **Zainab Masoudi**  
-Cloud Computing Specialist | Terraform | AWS | Kubernetes
+Cloud Computing Specialist | Terraform | AWS | CI/CD | Kubernetes
+
+---

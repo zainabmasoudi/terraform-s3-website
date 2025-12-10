@@ -1,0 +1,16 @@
+version: 0.2
+
+phases: 
+  install: 
+    commands:
+      - echo Installing AWS CLI
+      - pip install awscli
+
+  build: 
+    commands:
+      - echo Uploading website files to S3...
+      - aws s3 sync ../ s3://s3-bucket-expriment --exclude ".terraform/*" --exclude "terraform.tfstate*" --exclude "cicd/*"
+
+artifacts:
+  files:
+    - '**/*'
