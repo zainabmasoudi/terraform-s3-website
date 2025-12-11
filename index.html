@@ -56,7 +56,7 @@ header p {
 }
 header p::-webkit-scrollbar { display:none; }
 
-/* Horizontal nav – one line scrollable */
+/* NAV */
 nav {
   margin-top:20px;
   display:flex;
@@ -117,7 +117,6 @@ nav a:hover { color:#FFD700; }
   grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
   gap:30px;
 }
-
 .project-card {
   background:white;
   padding:20px;
@@ -134,7 +133,6 @@ nav a:hover { color:#FFD700; }
   gap:20px;
   align-items:center;
 }
-
 .review-card {
   background:white;
   padding:20px;
@@ -175,7 +173,6 @@ footer {
 
 <header>
   <h1>Zainab Masoudi</h1>
-
   <p>Cloud Computing Specialist | Kubernetes & CI/CD Enthusiast | IT Professional</p>
 
   <nav>
@@ -183,21 +180,55 @@ footer {
     <a href="#skills">Skills</a>
     <a href="#experience">Experience</a>
     <a href="#projects">Projects</a>
-    <a href="#reviews">Reviews</a>
   </nav>
 </header>
 
 <!-- EDUCATION -->
 <section id="education">
   <h2>Education</h2>
-  <div class="card">Your education details here...</div>
+  <div class="card">
+    <h3>Master of Science in Cloud Computing</h3>
+    <p><strong>Institution:</strong> Atlantic Technological University (ATU)</p>
+    <p><strong>Dissertation:</strong> RBAC Drift Detection in Cloud-Native Environments Using GitOps Argo CD Automation</p>
+    <p>Completed a comprehensive master's program focused on cloud architectures, containerization, automation, and DevOps methodologies.</p>
+  </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills">
   <h2>Skills</h2>
   <div class="card skills">
-    Your skills here...
+
+    <span>AWS</span>
+    <span>EC2</span>
+    <span>S3</span>
+    <span>VPC</span>
+    <span>IAM</span>
+    <span>CloudFront</span>
+    <span>Route 53</span>
+    <span>CloudWatch</span>
+
+    <span>Terraform</span>
+    <span>Infrastructure as Code (IaC)</span>
+
+    <span>Docker</span>
+    <span>Kubernetes</span>
+    <span>Helm</span>
+
+    <span>Linux</span>
+    <span>Bash</span>
+    <span>PowerShell</span>
+    <span>Networking</span>
+
+    <span>Git</span>
+    <span>GitHub</span>
+    <span>CI/CD</span>
+    <span>AWS CodeBuild</span>
+    <span>AWS CodePipeline</span>
+
+    <span>Ansible</span>
+    <span>Python Automation</span>
+    <span>Netmiko</span>
   </div>
 </section>
 
@@ -205,7 +236,37 @@ footer {
 <section id="experience">
   <h2>Experience</h2>
   <div class="experience">
-    <div class="exp-card">Your experience here...</div>
+
+    <div class="exp-card">
+      <h3>Student Internship — KMN Data Center (ATU)</h3>
+      <p><em>Jan 2025 – May 2025 · Donegal · Hybrid</em></p>
+      <p>Automated Dell OS9/OS10 switch configurations using Ansible, built Python automation scripts with Netmiko, monitored AD with PowerShell, and deployed Jira Data Center.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>Senior Information Technology Officer — AHSP</h3>
+      <p><em>Jun 2019 – Apr 2022 · Kabul · On-site</em></p>
+      <p>Managed firewalls, NAS, virtualization, and Linux/Windows servers. Implemented MariaDB, LDAP replication, Kaspersky Security Center, and Xen HA clusters.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>IT Specialist — GIZ</h3>
+      <p><em>Jan 2019 – Jun 2019 · Kabul · On-site</em></p>
+      <p>Performed vulnerability assessments using OpenVAS, monitored with Nagios/Icinga, supported XenServer, and deployed Linux QuickBooks DB server.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>Information Technology Engineer — ADRAS</h3>
+      <p><em>Feb 2017 – Jan 2018 · Kabul · On-site</em></p>
+      <p>Configured VLANs, ACLs, routing, WiFi systems, cabling, and resolved daily IT support issues.</p>
+    </div>
+
+    <div class="exp-card">
+      <h3>IT Technician — Ministry of Higher Education</h3>
+      <p><em>Apr 2016 – Dec 2016 · Kabul · On-site</em></p>
+      <p>Researched authentication protocols, implemented RADIUS, and contributed to AfgREN cloud education research.</p>
+    </div>
+
   </div>
 </section>
 
@@ -214,18 +275,11 @@ footer {
   <h2>Projects</h2>
   <div class="projects">
 
-    <!-- CLOUD PROJECT CARD -->
     <div class="project-card">
       <h3>AWS Automated Static Website Hosting (Terraform + S3 + CI/CD)</h3>
-      <p>
-        Developed an automated infrastructure pipeline using Terraform to host a static website on Amazon S3.
-        Integrated AWS CodeBuild to create a CI/CD workflow that triggers on GitHub commits and deploys changes
-        automatically to the hosting bucket.
-      </p>
+      <p>Developed a Terraform-powered automated pipeline deploying a static portfolio website to Amazon S3 with CI/CD via AWS CodeBuild and GitHub.</p>
       <p><strong>Technologies:</strong> Terraform, AWS S3, IAM, CodeBuild, GitHub, CI/CD</p>
-      <a href="https://github.com/zainabmasoudi/terraform-s3-website" 
-         target="_blank" 
-         style="color:#6C63FF; font-weight:bold;">
+      <a href="https://github.com/zainabmasoudi/terraform-s3-website" target="_blank" style="color:#6C63FF; font-weight:bold;">
          View Source Code →
       </a>
     </div>
@@ -233,13 +287,6 @@ footer {
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews">
-  <h2>Reviews</h2>
-  <div class="reviews">
-    <div class="review-card">Your reviews here...</div>
-  </div>
-</section>
 
 <footer>
   <p>© 2025 Zainab Masoudi — All Rights Reserved</p>

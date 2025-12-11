@@ -106,9 +106,9 @@ terraform apply
 
 ---
 
-## 🌐 Static Website URL
+## Static Website URL
 
-http://s3-backet-expriment.s3-website-eu-west-1.amazonaws.com/
+http://s3-bucket-expriment.s3-website-eu-west-1.amazonaws.com
 
 
 ---
